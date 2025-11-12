@@ -63,7 +63,7 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 
             var storyPlanRow = element.GetTable(storyPlanTableId).GetRow(storyPlanId);
 
-            return ConvertRowToStoryPlan(storyPlanRow);
+            return Converter.ConvertRowToStoryPlan(storyPlanRow);
         }
 
         /// <inheritdoc/>
@@ -84,27 +84,7 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 
             var productionJobRow = element.GetTable(productionJobTableId).GetRow(productionJobId);
 
-            return ConvertRowToProductionJob(productionJobRow);
-        }
-
-        internal static StoryPlan ConvertRowToStoryPlan(object[] storyPlanRow)
-        {
-            if (storyPlanRow == null)
-            {
-                throw new ArgumentNullException(nameof(storyPlanRow));
-            }
-
-            return new StoryPlan();
-        }
-
-        internal static ProductionJob ConvertRowToProductionJob(object[] productionJobRow)
-        {
-            if (productionJobRow is null)
-            {
-                throw new ArgumentNullException(nameof(productionJobRow));
-            }
-
-            return new ProductionJob();
+            return Converter.ConvertRowToProductionJob(productionJobRow);
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 {
-    using System;
-
     public class StoryPlan
     {
         public string Id { get; set; }
