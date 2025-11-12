@@ -29,6 +29,4 @@ jobs:
       sonarCloudProjectName: SkylineCommunications_Skyline.DataMiner.ConnectorAPI.Kordiam
     secrets:
       sonarCloudToken: ${{ secrets.SONAR_TOKEN }}
-      pfx: ${{ secrets.PFX }}
-      pfxPassword: ${{ secrets.PFXPASSWORD }}
-      nugetApiKey: ${{ secrets.NUGETAPIKEY }}
+      nugetApiKey: ${{ secrets.NUGETAPIKEY_GITHUB }}
