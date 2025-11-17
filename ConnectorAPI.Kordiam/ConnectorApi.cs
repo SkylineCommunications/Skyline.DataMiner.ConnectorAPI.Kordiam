@@ -1,8 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("ConnectorAPI.KordiamTests")]
-
-namespace Skyline.DataMiner.ConnectorAPI.Kordiam
+﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 {
     using System;
     using Microsoft.Extensions.Logging;
@@ -36,12 +32,6 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
             this.element = dms.GetElement(new DmsElementId(agentId, elementId));
             if (element.State != ElementState.Active) throw new InvalidOperationException($"Element {element.Name} is not active");
 
-            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        }
-
-        internal ConnectorApi(IDmsElement element, ILogger logger)
-        {
-            this.element = element ?? throw new ArgumentNullException(nameof(element));
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -90,7 +80,7 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
         /// <inheritdoc/>
         public void ReportOrderInfo(OrderInfo orderInfo)
         {
-            // Not implemented yet
+            throw new NotImplementedException(); // Will be implemented in DCP284156
         }
     }
 }
