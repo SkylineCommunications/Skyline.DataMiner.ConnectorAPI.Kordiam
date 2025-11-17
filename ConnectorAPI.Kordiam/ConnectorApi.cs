@@ -86,5 +86,11 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 
             return Converter.ConvertRowToProductionJob(productionJobRow);
         }
+
+        /// <inheritdoc/>
+        public void ReportOrderInfo(OrderInfo orderInfo)
+        {
+            // Not implemented yet
+        }
     }
 }

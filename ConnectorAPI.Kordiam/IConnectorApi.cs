@@ -18,5 +18,11 @@
         /// <param name="storyPlanId">The ID of the story plan to get.</param>
         /// <returns>The story plan if it exists, otherwise null.</returns>
         StoryPlan GetStoryPlan(string storyPlanId);
+
+        /// <summary>
+        /// Sends info about an order to the Kordiam element.
+        /// </summary>
+        /// <param name="orderInfo">Information about the order.</param>
+        void ReportOrderInfo(OrderInfo orderInfo);
     }
 }
