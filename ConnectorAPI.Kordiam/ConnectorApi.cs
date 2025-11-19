@@ -2,6 +2,8 @@
 {
     using System;
     using Microsoft.Extensions.Logging;
+    using Skyline.DataMiner.ConnectorAPI.Kordiam.Data;
+    using Skyline.DataMiner.ConnectorAPI.Kordiam.Helpers;
     using Skyline.DataMiner.Core.DataMinerSystem.Common;
     using Skyline.DataMiner.Net;
 
@@ -12,8 +14,8 @@
 
         private readonly IDmsElement element;
 
-        private static readonly int storyPlanTableId = 100;
-        private static readonly int productionJobTableId = 200;
+        private static readonly int storyPlanTableId = 100; // TODO Verify table ID
+        private static readonly int productionJobTableId = 200; // TODO Verify table ID
 
         /// <summary>
         /// Creates an instance of the Connector API.
@@ -80,7 +82,7 @@
         /// <inheritdoc/>
         public void ReportOrderInfo(OrderInfo orderInfo)
         {
-            throw new NotImplementedException(); // Will be implemented in DCP284156
+            throw new NotImplementedException(); //TODO Will be implemented in DCP284156
         }
     }
 }

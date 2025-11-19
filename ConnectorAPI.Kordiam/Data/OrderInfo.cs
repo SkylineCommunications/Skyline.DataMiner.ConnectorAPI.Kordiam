@@ -1,5 +1,4 @@
-﻿
-namespace Skyline.DataMiner.ConnectorAPI.Kordiam
+﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam.Data
 {
     using System;
 

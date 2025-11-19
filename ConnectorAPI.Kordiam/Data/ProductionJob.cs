@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Skyline.DataMiner.ConnectorAPI.Kordiam
+﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam.Data
 {
+    using System;
+
     public class ProductionJob
     {
         public string Id { get; set; }
@@ -10,12 +10,16 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 
         public string Status { get; set; }
 
+        //TODO: verify if DateTime or DateTime?
         public DateTime OriginalStartTime { get; set; }
 
+        //TODO: verify if DateTime or DateTime?
         public DateTime OriginalEndTime { get; set; }
 
+        //TODO: verify if DateTime or DateTime?
         public DateTime PlannedStartTime { get; set; }
 
+        //TODO: verify if DateTime or DateTime?
         public DateTime PlannedEndTime { get; set; }
 
         public string EditorialTeam { get; set; }

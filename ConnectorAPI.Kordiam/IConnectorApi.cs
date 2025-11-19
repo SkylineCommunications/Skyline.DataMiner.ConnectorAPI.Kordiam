@@ -1,4 +1,6 @@
-﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam
+﻿using Skyline.DataMiner.ConnectorAPI.Kordiam.Data;
+
+namespace Skyline.DataMiner.ConnectorAPI.Kordiam
 {
     /// <summary>
     /// An API to interact with a Kordiam connector element.

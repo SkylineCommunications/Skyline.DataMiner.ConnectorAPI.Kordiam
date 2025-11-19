@@ -1,6 +1,7 @@
-﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam
+﻿namespace Skyline.DataMiner.ConnectorAPI.Kordiam.Helpers
 {
     using System;
+    using Skyline.DataMiner.ConnectorAPI.Kordiam.Data;
 
     public static class Converter
     {
@@ -11,6 +12,8 @@
                 throw new ArgumentNullException(nameof(storyPlanRow));
             }
 
+            // TODO Implement
+
             return new StoryPlan();
         }
 
@@ -20,6 +23,8 @@
             {
                 throw new ArgumentNullException(nameof(productionJobRow));
             }
+
+            // TODO Implement
 
             return new ProductionJob();
         }
