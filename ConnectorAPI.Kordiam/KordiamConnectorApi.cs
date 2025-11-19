@@ -8,7 +8,7 @@
     using Skyline.DataMiner.Net;
 
     /// <inheritdoc/>
-    public class ConnectorApi : IConnectorApi
+    public class KordiamConnectorApi : IKordiamConnectorApi
     {
         private readonly ILogger logger;
 
@@ -24,7 +24,7 @@
         /// <param name="agentId"></param>
         /// <param name="elementId"></param>
         /// <param name="logger"></param>
-        public ConnectorApi(IConnection connection, int agentId, int elementId, ILogger logger)
+        public KordiamConnectorApi(IConnection connection, int agentId, int elementId, ILogger logger)
         {
             if (connection == null) throw new ArgumentNullException(nameof(connection));
             if (agentId < 0) throw new ArgumentOutOfRangeException(nameof(agentId), "Agent ID cannot be negative");

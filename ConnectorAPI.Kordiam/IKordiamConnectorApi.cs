@@ -5,7 +5,7 @@ namespace Skyline.DataMiner.ConnectorAPI.Kordiam
     /// <summary>
     /// An API to interact with a Kordiam connector element.
     /// </summary>
-    public interface IConnectorApi
+    public interface IKordiamConnectorApi
     {
         /// <summary>
         /// Gets a production job by its ID.
