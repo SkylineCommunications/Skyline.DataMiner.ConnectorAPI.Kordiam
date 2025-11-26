@@ -10,16 +10,12 @@
 
         public string Status { get; set; }
 
-        //TODO: verify if DateTime or DateTime?
         public DateTime OriginalStartTime { get; set; }
 
-        //TODO: verify if DateTime or DateTime?
         public DateTime OriginalEndTime { get; set; }
 
-        //TODO: verify if DateTime or DateTime?
         public DateTime PlannedStartTime { get; set; }
 
-        //TODO: verify if DateTime or DateTime?
         public DateTime PlannedEndTime { get; set; }
 
         public string EditorialTeam { get; set; }

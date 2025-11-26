@@ -14,8 +14,7 @@
 
         private readonly IDmsElement element;
 
-        private static readonly int storyPlanTableId = 100; // TODO Verify table ID
-        private static readonly int productionJobTableId = 200; // TODO Verify table ID
+        private static readonly int productionJobTableId = 2100;
 
         /// <summary>
         /// Creates an instance of the Connector API.
@@ -45,7 +44,7 @@
                 throw new ArgumentNullException(nameof(storyPlanId));
             }
 
-            var storyPlanTable = element.GetTable(storyPlanTableId);
+            var storyPlanTable = element.GetTable(KordiamProtocol.StoryPlanTable.TableId);
 
             if (!storyPlanTable.RowExists(storyPlanId))
             {
@@ -53,7 +52,7 @@
                 return null;
             }
 
-            var storyPlanRow = element.GetTable(storyPlanTableId).GetRow(storyPlanId);
+            var storyPlanRow = storyPlanTable.GetRow(storyPlanId);
 
             return Converter.ConvertRowToStoryPlan(storyPlanRow);
         }
@@ -74,7 +73,7 @@
                 return null;
             }
 
-            var productionJobRow = element.GetTable(productionJobTableId).GetRow(productionJobId);
+            var productionJobRow = productionJobTable.GetRow(productionJobId);
 
             return Converter.ConvertRowToProductionJob(productionJobRow);
         }
