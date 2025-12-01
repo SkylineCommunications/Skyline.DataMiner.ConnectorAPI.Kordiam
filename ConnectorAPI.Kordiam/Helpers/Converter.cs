@@ -12,9 +12,9 @@
                 throw new ArgumentNullException(nameof(storyPlanRow));
             }
 
-            if (storyPlanRow.Length != 5)
+            if (storyPlanRow.Length < 5)
             {
-                throw new ArgumentException($"Invalid story plan row length 5. Got {storyPlanRow.Length} instead", nameof(storyPlanRow));
+                throw new ArgumentException($"Expected story plan row to have at least 5 items, got {storyPlanRow.Length} instead", nameof(storyPlanRow));
             }
 
             return new StoryPlan
@@ -34,9 +34,9 @@
                 throw new ArgumentNullException(nameof(productionJobRow));
             }
 
-            if (productionJobRow.Length != 14)
+            if (productionJobRow.Length < 15)
             {
-                throw new ArgumentException($"Invalid story plan row length 14. Got {productionJobRow.Length} instead", nameof(productionJobRow));
+                throw new ArgumentException($"Expected production job row to have at least 15 items, got {productionJobRow.Length} instead", nameof(productionJobRow));
             }
 
             return new ProductionJob
@@ -54,7 +54,8 @@
                 InstructionSourceUnit = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.InstructionSourceUnitColumnIndex]),
                 ExternalLink = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.ExternalLinkColumnIndex]),
                 ExternalLinkLabel = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.ExternalLinkLabelColumnIndex]),
-                Status = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.StatusColumnIndex])
+                Status = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.StatusColumnIndex]),
+                AdditionalInfo = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.AdditionalInfoColumnIndex]),
             };
         }
     }

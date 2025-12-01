@@ -31,6 +31,7 @@
             public const int ExternalLinkColumnIndex = 11;
             public const int ExternalLinkLabelColumnIndex = 12;
             public const int StatusColumnIndex = 13;
+            public const int AdditionalInfoColumnIndex = 14;
         }
     }
 }

@@ -30,7 +30,7 @@
 
         public string ExternalLinkLabel { get; set; }
 
-        public string PlanningInfo { get; set; }
+        public string AdditionalInfo { get; set; }
 
         public string StoryPlanId { get; set; }
     }
