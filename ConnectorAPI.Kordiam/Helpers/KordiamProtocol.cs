@@ -30,8 +30,8 @@
             public const int InstructionSourceUnitColumnIndex = 10;
             public const int ExternalLinkColumnIndex = 11;
             public const int ExternalLinkLabelColumnIndex = 12;
-            public const int StatusColumnIndex = 13;
-            public const int AdditionalInfoColumnIndex = 14;
+            public const int AdditionalInfoColumnIndex = 13;
+            public const int StatusColumnIndex = 14;
         }
     }
 }
