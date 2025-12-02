@@ -23,7 +23,7 @@
                 Title = Convert.ToString(storyPlanRow[KordiamProtocol.StoryPlanTable.TitleColumnIndex]),
                 Description = Convert.ToString(storyPlanRow[KordiamProtocol.StoryPlanTable.DescriptionColumnIndex]),
                 Kind = Convert.ToString(storyPlanRow[KordiamProtocol.StoryPlanTable.KindColumnIndex]),
-                Timestamp = DateTime.FromOADate(Convert.ToDouble(storyPlanRow[KordiamProtocol.StoryPlanTable.TimestampColumnIndex]))
+                Timestamp = DateTime.SpecifyKind(DateTime.FromOADate(Convert.ToDouble(storyPlanRow[KordiamProtocol.StoryPlanTable.TimestampColumnIndex])), DateTimeKind.Local),
             };
         }
 
@@ -44,10 +44,10 @@
                 Id = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.IdColumnIndex]),
                 StoryPlanId = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.StoryPlanIdColumnIndex]),
                 Kind = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.KindColumnIndex]),
-                OriginalStartTime = DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.OriginalStartTimeColumnIndex])),
-                OriginalEndTime = DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.OriginalEndTimeColumnIndex])),
-                PlannedStartTime = DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.PlannedStartTimeColumnIndex])),
-                PlannedEndTime = DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.PlannedEndTimeColumnIndex])),
+                OriginalStartTime = DateTime.SpecifyKind(DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.OriginalStartTimeColumnIndex])), DateTimeKind.Local),
+                OriginalEndTime = DateTime.SpecifyKind(DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.OriginalEndTimeColumnIndex])), DateTimeKind.Local),
+                PlannedStartTime = DateTime.SpecifyKind(DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.PlannedStartTimeColumnIndex])), DateTimeKind.Local),
+                PlannedEndTime = DateTime.SpecifyKind(DateTime.FromOADate(Convert.ToDouble(productionJobRow[KordiamProtocol.ProductionJobTable.PlannedEndTimeColumnIndex])), DateTimeKind.Local),
                 EditorialTeam = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.EditorialTeamColumnIndex]),
                 Assignee = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.AssignedToColumnIndex]),
                 InstructionSource = Convert.ToString(productionJobRow[KordiamProtocol.ProductionJobTable.InstructionSourceColumnIndex]),
