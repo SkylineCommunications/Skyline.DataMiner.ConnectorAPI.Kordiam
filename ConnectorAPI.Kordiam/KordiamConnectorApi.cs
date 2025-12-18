@@ -2,14 +2,18 @@
 {
     using System;
     using Microsoft.Extensions.Logging;
+    using Newtonsoft.Json;
     using Skyline.DataMiner.ConnectorAPI.Kordiam.Data;
     using Skyline.DataMiner.ConnectorAPI.Kordiam.Helpers;
+    using Skyline.DataMiner.ConnectorAPI.Kordiam.InterApp;
     using Skyline.DataMiner.Core.DataMinerSystem.Common;
+    using Skyline.DataMiner.Core.InterAppCalls.Common.CallBulk;
     using Skyline.DataMiner.Net;
 
     /// <inheritdoc/>
     public class KordiamConnectorApi : IKordiamConnectorApi
     {
+        private readonly IConnection connection;
         private readonly ILogger logger;
 
         private readonly IDmsElement element;
@@ -25,14 +29,14 @@
         /// <param name="logger"></param>
         public KordiamConnectorApi(IConnection connection, int agentId, int elementId, ILogger logger)
         {
-            if (connection == null) throw new ArgumentNullException(nameof(connection));
+            this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
+
             if (agentId < 0) throw new ArgumentOutOfRangeException(nameof(agentId), "Agent ID cannot be negative");
             if (elementId < 0) throw new ArgumentOutOfRangeException(nameof(elementId), "Element ID cannot be negative");
 
             var dms = connection.GetDms();
             this.element = dms.GetElement(new DmsElementId(agentId, elementId));
             if (element.State != ElementState.Active) throw new InvalidOperationException($"Element {element.Name} is not active");
-
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -81,7 +85,20 @@
         /// <inheritdoc/>
         public void ReportOrderInfo(OrderInfo orderInfo)
         {
-            throw new NotImplementedException(); //TODO Will be implemented in DCP284156
+            if (orderInfo is null)
+            {
+                throw new ArgumentNullException(nameof(orderInfo));
+            }
+
+            var commands = InterAppCallFactory.CreateNew();
+            commands.Messages.Add(new OrderInfoMessage
+            {
+                OrderInfo = orderInfo
+            });
+
+            logger.LogInformation("Reporting order info {OrderInfo} to Kordiam element", JsonConvert.SerializeObject(orderInfo));
+
+            commands.Send(connection, element.AgentId, element.Id, 9_000_000, InterAppKnownTypes.KnownTypes);
         }
     }
 }
