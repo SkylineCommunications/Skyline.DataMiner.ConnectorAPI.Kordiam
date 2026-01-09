@@ -8,6 +8,11 @@
     public class OrderInfo
     {
         /// <summary>
+        /// Gets or sets the production job ID.
+        /// </summary>
+        public string ProductionJobId { get; set; }
+
+        /// <summary>
         /// Gets or sets the label.
         /// </summary>
         public Label Label { get; set; }
