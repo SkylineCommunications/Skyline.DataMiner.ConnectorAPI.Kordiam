@@ -20,6 +20,7 @@
     <Description>Provides an API to communicate with the Kordiam connector</Description>
     <SignAssembly>False</SignAssembly>
     <PlatformTarget>x86</PlatformTarget>
+    <RepositoryUrl>https://github.com/SkylineCommunications/Skyline.DataMiner.ConnectorAPI.Kordiam</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
